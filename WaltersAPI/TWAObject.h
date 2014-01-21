@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "TWABase.h"
+#import <AFNetworking/AFHTTPRequestOperationManager.h>
 
 @interface TWAObject : TWABase
 

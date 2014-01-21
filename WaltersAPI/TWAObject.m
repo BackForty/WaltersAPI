@@ -12,16 +12,14 @@
 
 + (void) fetchPage: (int) pageNumber withPageSize: (int) pageSize completion: (void(^)(NSArray*)) callback {
 
-    NSURL *indexURL = [NSURL URLWithString: @"http://api.thewalters.org/v1/objects?apikey=sOK3xgGkv3ooeK4J9P5yKINSs8vSgWEMSeLp6TLUkT6iX7B5hraqLDEZ1sBpln3O"];
-    [TWABase fetchJSONDataAtURL: indexURL returningResultsTo: ^(NSURLResponse *response, id responseObject, NSError *error) {
-        if (error) {
-            NSLog(@"Error: %@", error);
-            callback([[NSArray alloc] init]);
-        } else {
-            NSLog(@"%@ %@", response, responseObject);
-            callback([[NSArray alloc] init]);
-        }
+    NSString *indexURL = @"http://api.thewalters.org/v1/objects?apikey=sOK3xgGkv3ooeK4J9P5yKINSs8vSgWEMSeLp6TLUkT6iX7B5hraqLDEZ1sBpln3O";
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET: indexURL parameters: nil success: ^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
     }];
+    NSLog(@"Done with that");
 }
 
 @end
