@@ -11,12 +11,14 @@
 NSString *const BaseURL = @"http://api.thewalters.org";
 
 @implementation TWAClient {
+
     NSString *apiKey;
 }
 
 - (id)initWithAPIKey: (NSString *) someAPIKey {
+
     self = [super init];
-    
+
     if(self) {
         apiKey = someAPIKey;
         return self;
@@ -25,12 +27,13 @@ NSString *const BaseURL = @"http://api.thewalters.org";
     }
 }
 
-- (NSArray *) getObjects {
-    return nil;
+- (void) getObjectsOnPage: (int) pageNumber withPageSize: (int) pageSize completion:(void(^)(NSArray*))callback {
+
+    [TWAObject fetchPage: pageNumber withPageSize: pageSize completion: callback];
 }
 
-- (TWAObject *) getObjectByID: (NSString *) objectID {
-    return nil;
+- (void) getObjectByID: (NSString *) objectID completion:(void(^)(TWAImage*))callback {
+
 }
 
 - (NSArray *) getCollections {

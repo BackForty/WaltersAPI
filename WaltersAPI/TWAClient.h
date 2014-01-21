@@ -20,8 +20,8 @@ extern NSString *const BaseURL;
 
 - (id)initWithAPIKey: (NSString *) apiKey;
 
-- (NSArray *) getObjects;
-- (TWAObject *) getObjectByID: (NSString *) objectID;
+- (void) getObjectsOnPage: (int) pageNumber withPageSize: (int) pageSize completion:(void(^)(NSArray*))callback;
+- (void) getObjectByID: (NSString *) objectID completion:(void(^)(TWAImage*))callback;
 
 - (NSArray *) getCollections;
 - (TWACollection *) getCollectionByID: (NSString *) objectID;

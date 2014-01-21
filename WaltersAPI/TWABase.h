@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AFNetworking/AFURLSessionManager.h>
 
 @interface TWABase : NSObject
 
++ (void) fetchJSONDataAtURL: (NSURL *) dataURL returningResultsTo: (void(^)(NSURLResponse*, id, NSError*)) callback;
 
 @end

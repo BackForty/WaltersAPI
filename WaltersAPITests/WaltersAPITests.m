@@ -19,7 +19,7 @@
 
 - (void)setUp {
     [super setUp];
-    testClient = [[TWAClient alloc] init];
+    testClient = [[TWAClient alloc] initWithAPIKey: @"sOK3xgGkv3ooeK4J9P5yKINSs8vSgWEMSeLp6TLUkT6iX7B5hraqLDEZ1sBpln3O"];
 }
 
 - (void)tearDown {
@@ -28,7 +28,20 @@
 }
 
 - (void)testGetObjects {
-    NSArray *objectResults = [testClient getObjects];
+
+    __block BOOL stopper = true;
+    __block NSArray *resultArray;
+
+    [testClient getObjectsOnPage: 1 withPageSize: 10 completion: ^(NSArray *objectArray) {
+        stopper = false;
+        resultArray = objectArray;
+    }];
+
+    while(stopper) {
+
+    }
+
+    NSLog(@"%@", resultArray);
 }
 
 @end

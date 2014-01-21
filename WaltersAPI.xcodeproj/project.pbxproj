@@ -8,30 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		0E4F3054188D97E600D2C5A0 /* TWABase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F3053188D97E600D2C5A0 /* TWABase.m */; };
-		0E4F3055188D97E600D2C5A0 /* TWABase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F3053188D97E600D2C5A0 /* TWABase.m */; };
 		0E4F3058188D98B500D2C5A0 /* TWAClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F3057188D98B500D2C5A0 /* TWAClient.m */; };
-		0E4F3059188D98B500D2C5A0 /* TWAClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F3057188D98B500D2C5A0 /* TWAClient.m */; };
 		0E4F305C188D998E00D2C5A0 /* TWAObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F305B188D998E00D2C5A0 /* TWAObject.m */; };
-		0E4F305D188D998E00D2C5A0 /* TWAObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F305B188D998E00D2C5A0 /* TWAObject.m */; };
 		0E4F3060188D999A00D2C5A0 /* TWACollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F305F188D999A00D2C5A0 /* TWACollection.m */; };
-		0E4F3061188D999A00D2C5A0 /* TWACollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F305F188D999A00D2C5A0 /* TWACollection.m */; };
 		0E4F3064188D99AA00D2C5A0 /* TWAExhibition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F3063188D99AA00D2C5A0 /* TWAExhibition.m */; };
-		0E4F3065188D99AA00D2C5A0 /* TWAExhibition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F3063188D99AA00D2C5A0 /* TWAExhibition.m */; };
 		0E4F3068188D99BA00D2C5A0 /* TWAGeography.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F3067188D99BA00D2C5A0 /* TWAGeography.m */; };
-		0E4F3069188D99BA00D2C5A0 /* TWAGeography.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F3067188D99BA00D2C5A0 /* TWAGeography.m */; };
 		0E4F306C188D99D200D2C5A0 /* TWAImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F306B188D99D200D2C5A0 /* TWAImage.m */; };
-		0E4F306D188D99D200D2C5A0 /* TWAImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F306B188D99D200D2C5A0 /* TWAImage.m */; };
 		0E4F3070188D99DE00D2C5A0 /* TWALocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F306F188D99DE00D2C5A0 /* TWALocation.m */; };
-		0E4F3071188D99DE00D2C5A0 /* TWALocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F306F188D99DE00D2C5A0 /* TWALocation.m */; };
 		0E578654188D8FC500CD846E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E578653188D8FC500CD846E /* Foundation.framework */; };
-		0E578659188D8FC500CD846E /* WaltersAPI.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0E578658188D8FC500CD846E /* WaltersAPI.h */; };
-		0E57865B188D8FC500CD846E /* WaltersAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E57865A188D8FC500CD846E /* WaltersAPI.m */; };
 		0E578662188D8FC500CD846E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E578661188D8FC500CD846E /* XCTest.framework */; };
 		0E578663188D8FC500CD846E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E578653188D8FC500CD846E /* Foundation.framework */; };
 		0E578665188D8FC500CD846E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E578664188D8FC500CD846E /* UIKit.framework */; };
 		0E578668188D8FC500CD846E /* libWaltersAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E578650188D8FC500CD846E /* libWaltersAPI.a */; };
 		0E57866E188D8FC500CD846E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E57866C188D8FC500CD846E /* InfoPlist.strings */; };
-		0E578670188D8FC500CD846E /* WaltersAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E57866F188D8FC500CD846E /* WaltersAPITests.m */; };
+		0EEFB668188DCF4600A9D193 /* WaltersAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E57866F188D8FC500CD846E /* WaltersAPITests.m */; };
 		55F67DBC581349AE836249F1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3479F438464A6CA966470C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +42,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				0E578659188D8FC500CD846E /* WaltersAPI.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,8 +68,6 @@
 		0E578650188D8FC500CD846E /* libWaltersAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWaltersAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E578653188D8FC500CD846E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0E578657188D8FC500CD846E /* WaltersAPI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WaltersAPI-Prefix.pch"; sourceTree = "<group>"; };
-		0E578658188D8FC500CD846E /* WaltersAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaltersAPI.h; sourceTree = "<group>"; };
-		0E57865A188D8FC500CD846E /* WaltersAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WaltersAPI.m; sourceTree = "<group>"; };
 		0E578660188D8FC500CD846E /* WaltersAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaltersAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E578661188D8FC500CD846E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		0E578664188D8FC500CD846E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -124,6 +111,7 @@
 				D536EB99AF734D98A1B710D8 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
+			wrapsLines = 0;
 		};
 		0E578651188D8FC500CD846E /* Products */ = {
 			isa = PBXGroup;
@@ -148,8 +136,6 @@
 		0E578655188D8FC500CD846E /* WaltersAPI */ = {
 			isa = PBXGroup;
 			children = (
-				0E578658188D8FC500CD846E /* WaltersAPI.h */,
-				0E57865A188D8FC500CD846E /* WaltersAPI.m */,
 				0E578656188D8FC500CD846E /* Supporting Files */,
 				0E4F3052188D97E600D2C5A0 /* TWABase.h */,
 				0E4F3053188D97E600D2C5A0 /* TWABase.m */,
@@ -314,7 +300,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E4F3068188D99BA00D2C5A0 /* TWAGeography.m in Sources */,
-				0E57865B188D8FC500CD846E /* WaltersAPI.m in Sources */,
 				0E4F3064188D99AA00D2C5A0 /* TWAExhibition.m in Sources */,
 				0E4F305C188D998E00D2C5A0 /* TWAObject.m in Sources */,
 				0E4F306C188D99D200D2C5A0 /* TWAImage.m in Sources */,
@@ -329,15 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E4F3069188D99BA00D2C5A0 /* TWAGeography.m in Sources */,
-				0E578670188D8FC500CD846E /* WaltersAPITests.m in Sources */,
-				0E4F3065188D99AA00D2C5A0 /* TWAExhibition.m in Sources */,
-				0E4F305D188D998E00D2C5A0 /* TWAObject.m in Sources */,
-				0E4F306D188D99D200D2C5A0 /* TWAImage.m in Sources */,
-				0E4F3061188D999A00D2C5A0 /* TWACollection.m in Sources */,
-				0E4F3055188D97E600D2C5A0 /* TWABase.m in Sources */,
-				0E4F3059188D98B500D2C5A0 /* TWAClient.m in Sources */,
-				0E4F3071188D99DE00D2C5A0 /* TWALocation.m in Sources */,
+				0EEFB668188DCF4600A9D193 /* WaltersAPITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +438,7 @@
 		};
 		0E578677188D8FC500CD846E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D536EB99AF734D98A1B710D8 /* Pods.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -474,6 +452,10 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = "WaltersAPITests/WaltersAPITests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
@@ -482,6 +464,7 @@
 		};
 		0E578678188D8FC500CD846E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D536EB99AF734D98A1B710D8 /* Pods.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -491,6 +474,10 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WaltersAPI/WaltersAPI-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = "WaltersAPITests/WaltersAPITests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
