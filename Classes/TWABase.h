@@ -13,10 +13,11 @@
 
 - (id)initWithAPIKey: (NSString *) someAPIKey;
 - (NSOperationQueue*) operationQueue;
-- (NSURLRequest*) requestForPath: (NSString*) resourcePath withPaginationOptions: (TWARequestOptions*) paginationOptions;
+- (NSURLRequest*) requestForPath: (NSString*) resourcePath withRequestOptions: (TWARequestOptions*) requestOptions;
 - (NSString*) resourcePath: (NSString*) resourcePath withParameters: (NSDictionary*) parameters;
 - (void) fetchItemsWithRequest: (NSURLRequest *) request onSuccess: (void(^)(NSArray* items)) successBlock fail: (void(^)(NSURLResponse* response, NSError* error)) failureBlock;
-- (void) getAllUsingPaginationOptions: (TWARequestOptions*) paginationOptions onSuccess: (void(^)(NSArray* items)) successBlock fail: (void(^)(NSURLResponse* response, NSError* error)) failureBlock;
+
+- (void) getAllUsingOptions: (TWARequestOptions*) requestOptions onSuccess: (void(^)(NSArray* items)) successBlock fail: (void(^)(NSURLResponse* response, NSError* error)) failureBlock;
 
 // Should be implemented by subclass
 - (NSArray*) buildItemListFromJSON: (NSArray*) rawObjects;

@@ -1,5 +1,5 @@
 //
-//  TWAPaginationOptions.h
+//  TWARequestOptions.h
 //  WaltersAPISampleApplication
 //
 //  Created by Ed Schmalzle on 1/23/14.
@@ -13,8 +13,9 @@
 @property int pageSize;
 @property int page;
 
-- (id) initWithPage: (int) aPage andPageSize: (int) aPageSize;
+- (id) initWithDictionary: (NSDictionary*) aDict;
 - (NSDictionary*) toDictionary;
-+ (TWARequestOptions*) defaultPaginationOptions;
+
++ (TWARequestOptions*) defaultOptions;
  
 @end
