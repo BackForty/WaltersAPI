@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E4F3054188D97E600D2C5A0 /* TWABase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F3053188D97E600D2C5A0 /* TWABase.m */; };
-		0E4F3058188D98B500D2C5A0 /* TWAClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F3057188D98B500D2C5A0 /* TWAClient.m */; };
-		0E4F305C188D998E00D2C5A0 /* TWAObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F305B188D998E00D2C5A0 /* TWAObject.m */; };
-		0E4F3060188D999A00D2C5A0 /* TWACollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F305F188D999A00D2C5A0 /* TWACollection.m */; };
-		0E4F3064188D99AA00D2C5A0 /* TWAExhibition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F3063188D99AA00D2C5A0 /* TWAExhibition.m */; };
-		0E4F3068188D99BA00D2C5A0 /* TWAGeography.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F3067188D99BA00D2C5A0 /* TWAGeography.m */; };
-		0E4F306C188D99D200D2C5A0 /* TWAImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F306B188D99D200D2C5A0 /* TWAImage.m */; };
-		0E4F3070188D99DE00D2C5A0 /* TWALocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F306F188D99DE00D2C5A0 /* TWALocation.m */; };
+		0E03FA91189198A200FA5693 /* TWABase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F3053188D97E600D2C5A0 /* TWABase.m */; };
+		0E03FA93189198A200FA5693 /* TWAClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F3057188D98B500D2C5A0 /* TWAClient.m */; };
+		0E03FA95189198A200FA5693 /* TWAObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F305B188D998E00D2C5A0 /* TWAObject.m */; };
+		0E03FA97189198A200FA5693 /* TWACollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F305F188D999A00D2C5A0 /* TWACollection.m */; };
+		0E03FA99189198A200FA5693 /* TWAExhibition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F3063188D99AA00D2C5A0 /* TWAExhibition.m */; };
+		0E03FA9B189198A200FA5693 /* TWAGeography.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F3067188D99BA00D2C5A0 /* TWAGeography.m */; };
+		0E03FA9D189198A200FA5693 /* TWAImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F306B188D99D200D2C5A0 /* TWAImage.m */; };
+		0E03FA9F189198A200FA5693 /* TWALocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F306F188D99DE00D2C5A0 /* TWALocation.m */; };
 		0E578654188D8FC500CD846E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E578653188D8FC500CD846E /* Foundation.framework */; };
 		0E578662188D8FC500CD846E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E578661188D8FC500CD846E /* XCTest.framework */; };
 		0E578663188D8FC500CD846E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E578653188D8FC500CD846E /* Foundation.framework */; };
@@ -120,8 +120,8 @@
 		0E578647188D8FC500CD846E = {
 			isa = PBXGroup;
 			children = (
-				0E578655188D8FC500CD846E /* WaltersAPI */,
-				0E578669188D8FC500CD846E /* WaltersAPITests */,
+				0E578655188D8FC500CD846E /* Classes */,
+				0E578669188D8FC500CD846E /* Tests */,
 				0E578652188D8FC500CD846E /* Frameworks */,
 				0E578651188D8FC500CD846E /* Products */,
 				D536EB99AF734D98A1B710D8 /* Pods.xcconfig */,
@@ -149,7 +149,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		0E578655188D8FC500CD846E /* WaltersAPI */ = {
+		0E578655188D8FC500CD846E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				0E578656188D8FC500CD846E /* Supporting Files */,
@@ -170,7 +170,7 @@
 				0E4F306E188D99DE00D2C5A0 /* TWALocation.h */,
 				0E4F306F188D99DE00D2C5A0 /* TWALocation.m */,
 			);
-			path = WaltersAPI;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		0E578656188D8FC500CD846E /* Supporting Files */ = {
@@ -181,13 +181,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0E578669188D8FC500CD846E /* WaltersAPITests */ = {
+		0E578669188D8FC500CD846E /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				0E57866F188D8FC500CD846E /* WaltersAPITests.m */,
 				0E57866A188D8FC500CD846E /* Supporting Files */,
 			);
-			path = WaltersAPITests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		0E57866A188D8FC500CD846E /* Supporting Files */ = {
@@ -315,14 +315,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E4F3068188D99BA00D2C5A0 /* TWAGeography.m in Sources */,
-				0E4F3064188D99AA00D2C5A0 /* TWAExhibition.m in Sources */,
-				0E4F305C188D998E00D2C5A0 /* TWAObject.m in Sources */,
-				0E4F306C188D99D200D2C5A0 /* TWAImage.m in Sources */,
-				0E4F3060188D999A00D2C5A0 /* TWACollection.m in Sources */,
-				0E4F3054188D97E600D2C5A0 /* TWABase.m in Sources */,
-				0E4F3058188D98B500D2C5A0 /* TWAClient.m in Sources */,
-				0E4F3070188D99DE00D2C5A0 /* TWALocation.m in Sources */,
+				0E03FA91189198A200FA5693 /* TWABase.m in Sources */,
+				0E03FA93189198A200FA5693 /* TWAClient.m in Sources */,
+				0E03FA95189198A200FA5693 /* TWAObject.m in Sources */,
+				0E03FA97189198A200FA5693 /* TWACollection.m in Sources */,
+				0E03FA99189198A200FA5693 /* TWAExhibition.m in Sources */,
+				0E03FA9B189198A200FA5693 /* TWAGeography.m in Sources */,
+				0E03FA9D189198A200FA5693 /* TWAImage.m in Sources */,
+				0E03FA9F189198A200FA5693 /* TWALocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +432,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/WaltersAPI.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WaltersAPI/WaltersAPI-Prefix.pch";
+				GCC_PREFIX_HEADER = "Classes/WaltersAPI-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -445,7 +445,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/WaltersAPI.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WaltersAPI/WaltersAPI-Prefix.pch";
+				GCC_PREFIX_HEADER = "Classes/WaltersAPI-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -463,7 +463,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WaltersAPI/WaltersAPI-Prefix.pch";
+				GCC_PREFIX_HEADER = "Classes/WaltersAPI-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -489,7 +489,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WaltersAPI/WaltersAPI-Prefix.pch";
+				GCC_PREFIX_HEADER = "Classes/WaltersAPI-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(inherited)",
