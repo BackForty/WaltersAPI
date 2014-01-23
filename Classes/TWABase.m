@@ -55,8 +55,7 @@
     
     return returnString;
 }
-
-- (void) fetchItemsWithRequest: (NSURLRequest *) request onSuccess: (void(^)(NSArray* items)) successBlock fail: (void(^)(NSURLResponse* response, NSError* error)) failureBlock {
+- (void) fetchDataWithRequest: (NSURLRequest *) request onSuccess: (void(^)(NSDictionary* responseData)) successBlock fail: (void(^)(NSURLResponse* response, NSError* error)) failureBlock {
     [NSURLConnection sendAsynchronousRequest: request
                                        queue: [self operationQueue]
                            completionHandler: ^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -70,12 +69,28 @@
                                    if(parsingError) {
                                        failureBlock(response, parsingError);
                                    } else {
-                                       
-                                       NSArray *rawObjects = [responseData objectForKey: @"Items"];
-                                       successBlock([self buildItemListFromJSON: rawObjects]);
+                                       successBlock(responseData);
                                    }
                                }
                            }];
+}
+
+- (void) fetchItemsWithRequest: (NSURLRequest *) request onSuccess: (void(^)(NSArray* items)) successBlock fail: (void(^)(NSURLResponse* response, NSError* error)) failureBlock {
+    [self fetchDataWithRequest: request
+                     onSuccess: ^(NSDictionary* responseData) {
+                         NSArray *rawObjects = [responseData objectForKey: @"Items"];
+                         successBlock([self buildItemListFromJSON: rawObjects]);
+                     }
+                          fail: failureBlock];
+}
+
+- (void) fetchItemWithRequest: (NSURLRequest *) request onSuccess: (void(^)(NSArray* items)) successBlock fail: (void(^)(NSURLResponse* response, NSError* error)) failureBlock {
+    [self fetchDataWithRequest: request
+                     onSuccess: ^(NSDictionary* responseData) {
+                         NSArray *rawObjects = [responseData objectForKey: @"Data"];
+                         successBlock([self buildItemListFromJSON: rawObjects]);
+                     }
+                          fail: failureBlock];
 }
 
 - (void) getAllUsingOptions: (TWARequestOptions*) requestOptions onSuccess: (void(^)(NSArray* items)) successBlock fail: (void(^)(NSURLResponse* response, NSError* error)) failureBlock {
