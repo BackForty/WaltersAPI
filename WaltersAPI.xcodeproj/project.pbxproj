@@ -472,7 +472,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "WaltersAPITests/WaltersAPITests-Info.plist";
+				INFOPLIST_FILE = "Tests/WaltersAPITests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -494,7 +494,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "WaltersAPITests/WaltersAPITests-Info.plist";
+				INFOPLIST_FILE = "Tests/WaltersAPITests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
