@@ -10,6 +10,14 @@
 
 @implementation TWAObject
 
+- (id) initWithDictionary: (NSDictionary*) attributeDict {
+    self = [super init];
+    if(self) {
+        self.classification = [attributeDict objectForKey: @"Classification"];
+    }
+    return self;
+}
+
 - (void) fetchPage: (int) pageNumber withPageSize: (int) pageSize completion: (void(^)(NSArray*)) callback {
 
     NSString *indexURL = @"http://api.thewalters.org/v1/objects?apikey=sOK3xgGkv3ooeK4J9P5yKINSs8vSgWEMSeLp6TLUkT6iX7B5hraqLDEZ1sBpln3O";
@@ -26,11 +34,23 @@
     [NSURLConnection sendAsynchronousRequest: request
                                        queue: defaultQueue
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-                               NSLog(@"Well, mayber here?");
                                if(connectionError) {
-                                   NSLog(@"Error: %@", connectionError);
+                                   // Call callback with connection error
                                } else {
-                                   NSLog(@"JSON: %@", data);
+                                   NSError *parsingError;
+                                   NSDictionary *responseData = [NSJSONSerialization JSONObjectWithData: data
+                                                                                                options: kNilOptions
+                                                                                                  error: &parsingError];
+                                   if(parsingError) {
+                                       // Call callback with parsing error
+                                   } else {
+                                       NSArray *rawObjects = [responseData objectForKey: @"Items"];
+                                       NSMutableArray *objects = [[NSMutableArray alloc] init];
+                                       for(id thing in rawObjects) {
+                                           [objects addObject: [[TWAObject alloc] initWithDictionary: thing]];
+                                       }
+                                       callback(objects);
+                                   }
                                }
                            }];
 }

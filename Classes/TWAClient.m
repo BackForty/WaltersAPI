@@ -27,10 +27,19 @@ NSString *const BaseURL = @"http://api.thewalters.org";
     }
 }
 
+- (void) getObjectsWithPaginationOptions: (TWAPaginationOptions*) paginationOptions success:(void(^)(NSArray*)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock {
+    
+    TWAObject *twaObject = [[TWAObject alloc] initWithAPIKey: apiKey];
+    [twaObject fetchPage: paginationOptions.page withPageSize: paginationOptions.pageSize completion: callback];
+}
+
+- (void) getObjectByID: (NSString *) objectID onSuccess:(void(^)(TWAObject*)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock {
+    
+}
+
 - (void) getObjectsOnPage: (int) pageNumber withPageSize: (int) pageSize completion:(void(^)(NSArray*))callback {
 
-    TWAObject *twaObject = [[TWAObject alloc] initWithAPIKey: apiKey];
-    [twaObject fetchPage: pageNumber withPageSize: pageSize completion: callback];
+
 }
 
 - (void) getObjectByID: (NSString *) objectID completion:(void(^)(TWAImage*))callback {
