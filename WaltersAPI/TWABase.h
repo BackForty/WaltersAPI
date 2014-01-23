@@ -11,6 +11,7 @@
 
 @interface TWABase : NSObject
 
+- (id)initWithAPIKey: (NSString *) someAPIKey;
 + (void) fetchJSONDataAtURL: (NSURL *) dataURL returningResultsTo: (void(^)(NSURLResponse*, id, NSError*)) callback;
 
 @end

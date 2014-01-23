@@ -8,7 +8,20 @@
 
 #import "TWABase.h"
 
-@implementation TWABase
+@implementation TWABase {
+    NSString *apiKey;
+}
+
+- (id)initWithAPIKey: (NSString *) someAPIKey {
+    self = [super init];
+    
+    if(self) {
+        apiKey = someAPIKey;
+        return self;
+    } else {
+        return nil;
+    }
+}
 
 + (void) fetchJSONDataAtURL: (NSURL *) dataURL returningResultsTo: (void(^)(NSURLResponse*, id, NSError*)) callback {
     

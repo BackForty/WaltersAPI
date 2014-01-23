@@ -12,6 +12,6 @@
 
 @interface TWAObject : TWABase
 
-+ (void) fetchPage: (int) pageNumber withPageSize: (int) pageSize completion: (void(^)(NSArray*)) callback;
+- (void) fetchPage: (int) pageNumber withPageSize: (int) pageSize completion: (void(^)(NSArray*)) callback;
 
 @end

@@ -21,6 +21,14 @@
 		0E578665188D8FC500CD846E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E578664188D8FC500CD846E /* UIKit.framework */; };
 		0E578668188D8FC500CD846E /* libWaltersAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E578650188D8FC500CD846E /* libWaltersAPI.a */; };
 		0E57866E188D8FC500CD846E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E57866C188D8FC500CD846E /* InfoPlist.strings */; };
+		0E8B48D6188F05300084A319 /* TWABase.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0E4F3052188D97E600D2C5A0 /* TWABase.h */; };
+		0E8B48D8188F05300084A319 /* TWAClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0E4F3056188D98B500D2C5A0 /* TWAClient.h */; };
+		0E8B48DA188F05300084A319 /* TWAObject.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0E4F305A188D998E00D2C5A0 /* TWAObject.h */; };
+		0E8B48DC188F05300084A319 /* TWACollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0E4F305E188D999A00D2C5A0 /* TWACollection.h */; };
+		0E8B48DE188F05300084A319 /* TWAExhibition.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0E4F3062188D99AA00D2C5A0 /* TWAExhibition.h */; };
+		0E8B48E0188F05300084A319 /* TWAGeography.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0E4F3066188D99BA00D2C5A0 /* TWAGeography.h */; };
+		0E8B48E2188F05300084A319 /* TWAImage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0E4F306A188D99D200D2C5A0 /* TWAImage.h */; };
+		0E8B48E4188F05300084A319 /* TWALocation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0E4F306E188D99DE00D2C5A0 /* TWALocation.h */; };
 		0EEFB668188DCF4600A9D193 /* WaltersAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E57866F188D8FC500CD846E /* WaltersAPITests.m */; };
 		55F67DBC581349AE836249F1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3479F438464A6CA966470C /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -38,10 +46,18 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		0E57864E188D8FC500CD846E /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				0E8B48D6188F05300084A319 /* TWABase.h in CopyFiles */,
+				0E8B48D8188F05300084A319 /* TWAClient.h in CopyFiles */,
+				0E8B48DA188F05300084A319 /* TWAObject.h in CopyFiles */,
+				0E8B48DC188F05300084A319 /* TWACollection.h in CopyFiles */,
+				0E8B48DE188F05300084A319 /* TWAExhibition.h in CopyFiles */,
+				0E8B48E0188F05300084A319 /* TWAGeography.h in CopyFiles */,
+				0E8B48E2188F05300084A319 /* TWAImage.h in CopyFiles */,
+				0E8B48E4188F05300084A319 /* TWALocation.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
