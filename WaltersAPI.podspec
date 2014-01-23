@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.author             = { "Ed Schmalzle" => "ed@nerded.net" }
   s.social_media_url = "http://twitter.com/inthebackforty"
   s.platform     = :ios
-  s.source       = {:git => 'https://github.com/BackForty/WaltersAPI.git', :tag => 'beta'}
+  s.source       = {:git => 'https://github.com/BackForty/WaltersAPI.git', :tag => 'beta-0.0.1'}
   s.source_files  = 'Classes', 'Classes/**/*.{h,m}'
   s.public_header_files = 'Classes/**/*.h'
   s.requires_arc = true
