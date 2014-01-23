@@ -28,11 +28,13 @@
 }
 
 - (NSURLRequest*) requestForPath: (NSString*) resourcePath withPaginationOptions: (TWAPaginationOptions*) paginationOptions {
-    NSURL *baseURL = [[NSURL alloc] initWithString: @"http://api.thewalters.org/v1"];
+    NSURL *baseURL = [[NSURL alloc] initWithString: @"http://api.thewalters.org"];
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] initWithDictionary: [paginationOptions toDictionary]];
     [parameters setObject: apiKey forKey: @"apiKey"];
     
-    NSString *pathWithParams = [self resourcePath: resourcePath withParameters: parameters];
+    NSMutableString *versionedResourcePath = [[NSMutableString alloc] initWithString: @"/v1"];
+    [versionedResourcePath appendString: resourcePath];
+    NSString *pathWithParams = [self resourcePath: versionedResourcePath withParameters: parameters];
     NSURL *requestURL = [[NSURL alloc] initWithString: pathWithParams relativeToURL: baseURL];
     
     return [[NSURLRequest alloc] initWithURL: requestURL];
