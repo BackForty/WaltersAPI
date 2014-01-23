@@ -12,7 +12,6 @@
 @interface TWAObject : TWABase
 
 - (id) initWithDictionary: (NSDictionary*) attributeDict;
-- (void) getAllUsingPaginationOptions: (TWAPaginationOptions*) paginationOptions onSuccess: (void(^)(NSArray* items)) successBlock fail: (void(^)(NSURLResponse* response, NSError* error)) failureBlock;
 
 @property NSString* classification;
 

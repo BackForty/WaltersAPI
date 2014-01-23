@@ -18,31 +18,16 @@
     return self;
 }
 
-- (void) getAllUsingPaginationOptions: (TWAPaginationOptions*) paginationOptions onSuccess: (void(^)(NSArray* items)) successBlock fail: (void(^)(NSURLResponse* response, NSError* error)) failureBlock {
-    NSURLRequest *request = [self requestForPath: @"/objects" withPaginationOptions: paginationOptions];
-    
-    [NSURLConnection sendAsynchronousRequest: request
-                                       queue: [self operationQueue]
-                           completionHandler: ^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-                               if(connectionError) {
-                                   failureBlock(response, connectionError);
-                               } else {
-                                   NSError *parsingError;
-                                   NSDictionary *responseData = [NSJSONSerialization JSONObjectWithData: data
-                                                                                                options: kNilOptions
-                                                                                                  error: &parsingError];
-                                   if(parsingError) {
-                                       failureBlock(response, parsingError);
-                                   } else {
-                                       NSArray *rawObjects = [responseData objectForKey: @"Items"];
-                                       NSMutableArray *objects = [[NSMutableArray alloc] init];
-                                       for(id thing in rawObjects) {
-                                           [objects addObject: [[TWAObject alloc] initWithDictionary: thing]];
-                                       }
-                                       successBlock(objects);
-                                   }
-                               }
-                           }];
+- (NSString *)collectionPath {
+    return @"/objects";
+}
+
+- (NSArray*) buildItemListFromJSON: (NSArray*) rawObjects {
+    NSMutableArray *objects = [[NSMutableArray alloc] init];
+    for(id thing in rawObjects) {
+        [objects addObject: [[TWAObject alloc] initWithDictionary: thing]];
+    }
+    return objects;
 }
 
 @end

@@ -15,5 +15,10 @@
 - (NSOperationQueue*) operationQueue;
 - (NSURLRequest*) requestForPath: (NSString*) resourcePath withPaginationOptions: (TWAPaginationOptions*) paginationOptions;
 - (NSString*) resourcePath: (NSString*) resourcePath withParameters: (NSDictionary*) parameters;
+- (void) fetchItemsWithRequest: (NSURLRequest *) request onSuccess: (void(^)(NSArray* items)) successBlock fail: (void(^)(NSURLResponse* response, NSError* error)) failureBlock;
+- (void) getAllUsingPaginationOptions: (TWAPaginationOptions*) paginationOptions onSuccess: (void(^)(NSArray* items)) successBlock fail: (void(^)(NSURLResponse* response, NSError* error)) failureBlock;
+
+// Should be implemented by subclass
+- (NSArray*) buildItemListFromJSON: (NSArray*) rawObjects;
 
 @end

@@ -56,4 +56,41 @@
     return returnString;
 }
 
+- (void) fetchItemsWithRequest: (NSURLRequest *) request onSuccess: (void(^)(NSArray* items)) successBlock fail: (void(^)(NSURLResponse* response, NSError* error)) failureBlock {
+    [NSURLConnection sendAsynchronousRequest: request
+                                       queue: [self operationQueue]
+                           completionHandler: ^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+                               if(connectionError) {
+                                   failureBlock(response, connectionError);
+                               } else {
+                                   NSError *parsingError;
+                                   NSDictionary *responseData = [NSJSONSerialization JSONObjectWithData: data
+                                                                                                options: kNilOptions
+                                                                                                  error: &parsingError];
+                                   if(parsingError) {
+                                       failureBlock(response, parsingError);
+                                   } else {
+                                       
+                                       NSArray *rawObjects = [responseData objectForKey: @"Items"];
+                                       successBlock([self buildItemListFromJSON: rawObjects]);
+                                   }
+                               }
+                           }];
+}
+
+- (void) getAllUsingPaginationOptions: (TWAPaginationOptions*) paginationOptions onSuccess: (void(^)(NSArray* items)) successBlock fail: (void(^)(NSURLResponse* response, NSError* error)) failureBlock {
+    NSURLRequest *request = [self requestForPath:[self collectionPath] withPaginationOptions: paginationOptions];
+    [self fetchItemsWithRequest: request onSuccess: successBlock fail: failureBlock];
+}
+
+- (NSArray*) buildItemListFromJSON: (NSArray*) rawObjects {
+    NSLog(@"buildItemListFromJSON: should be implemented by %@", self.class);
+    return nil;
+}
+
+- (NSString *)collectionPath {
+    NSLog(@"collectionPath: should be implemented by %@", self.class);
+    return nil;
+}
+
 @end
