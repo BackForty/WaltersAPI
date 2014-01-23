@@ -68,6 +68,8 @@
 		0D3479F438464A6CA966470C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E2B0BA81891AA6000FE1759 /* TWAPaginationOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWAPaginationOptions.h; sourceTree = "<group>"; };
 		0E2B0BA91891AA6000FE1759 /* TWAPaginationOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWAPaginationOptions.m; sourceTree = "<group>"; };
+		0E2B0BEC1891B57C00FE1759 /* WaltersAPI.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WaltersAPI.podspec; sourceTree = "<group>"; };
+		0E2B0BED1891B61B00FE1759 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		0E4F3052188D97E600D2C5A0 /* TWABase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWABase.h; sourceTree = "<group>"; };
 		0E4F3053188D97E600D2C5A0 /* TWABase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWABase.m; sourceTree = "<group>"; };
 		0E4F3056188D98B500D2C5A0 /* TWAClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWAClient.h; sourceTree = "<group>"; };
@@ -123,6 +125,8 @@
 		0E578647188D8FC500CD846E = {
 			isa = PBXGroup;
 			children = (
+				0E2B0BED1891B61B00FE1759 /* LICENSE */,
+				0E2B0BEC1891B57C00FE1759 /* WaltersAPI.podspec */,
 				0E578655188D8FC500CD846E /* Classes */,
 				0E578669188D8FC500CD846E /* Tests */,
 				0E578652188D8FC500CD846E /* Frameworks */,
