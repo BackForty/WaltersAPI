@@ -27,7 +27,7 @@
     return [NSOperationQueue mainQueue];
 }
 
-- (NSURLRequest*) requestForPath: (NSString*) resourcePath withPaginationOptions: (TWAPaginationOptions*) paginationOptions {
+- (NSURLRequest*) requestForPath: (NSString*) resourcePath withPaginationOptions: (TWARequestOptions*) paginationOptions {
     NSURL *baseURL = [[NSURL alloc] initWithString: @"http://api.thewalters.org"];
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] initWithDictionary: [paginationOptions toDictionary]];
     [parameters setObject: apiKey forKey: @"apiKey"];
@@ -78,7 +78,7 @@
                            }];
 }
 
-- (void) getAllUsingPaginationOptions: (TWAPaginationOptions*) paginationOptions onSuccess: (void(^)(NSArray* items)) successBlock fail: (void(^)(NSURLResponse* response, NSError* error)) failureBlock {
+- (void) getAllUsingPaginationOptions: (TWARequestOptions*) paginationOptions onSuccess: (void(^)(NSArray* items)) successBlock fail: (void(^)(NSURLResponse* response, NSError* error)) failureBlock {
     NSURLRequest *request = [self requestForPath:[self collectionPath] withPaginationOptions: paginationOptions];
     [self fetchItemsWithRequest: request onSuccess: successBlock fail: failureBlock];
 }

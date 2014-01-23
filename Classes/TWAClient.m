@@ -27,7 +27,7 @@ NSString *const BaseURL = @"http://api.thewalters.org";
     }
 }
 
-- (void) getObjectsWithPaginationOptions: (TWAPaginationOptions*) paginationOptions success:(void(^)(NSArray*)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock {
+- (void) getObjectsWithPaginationOptions: (TWARequestOptions*) paginationOptions success:(void(^)(NSArray*)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock {
     
     TWAObject *twaObject = [[TWAObject alloc] initWithAPIKey: apiKey];
     [twaObject getAllUsingPaginationOptions: paginationOptions onSuccess: successBlock fail: failureBlock];

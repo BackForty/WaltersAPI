@@ -6,12 +6,12 @@
 //  Copyright (c) 2014 Back Forty. All rights reserved.
 //
 
-#import "TWAPaginationOptions.h"
+#import "TWARequestOptions.h"
 
-@implementation TWAPaginationOptions
+@implementation TWARequestOptions
 
-+ (TWAPaginationOptions*) defaultPaginationOptions {
-    return [[TWAPaginationOptions alloc] initWithPage: 1 andPageSize: 25];
++ (TWARequestOptions*) defaultPaginationOptions {
+    return [[TWARequestOptions alloc] initWithPage: 1 andPageSize: 25];
 }
 
 - (id) initWithPage: (int) aPage andPageSize: (int) aPageSize {

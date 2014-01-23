@@ -15,7 +15,7 @@
 		0E03FA9B189198A200FA5693 /* TWAGeography.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F3067188D99BA00D2C5A0 /* TWAGeography.m */; };
 		0E03FA9D189198A200FA5693 /* TWAImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F306B188D99D200D2C5A0 /* TWAImage.m */; };
 		0E03FA9F189198A200FA5693 /* TWALocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F306F188D99DE00D2C5A0 /* TWALocation.m */; };
-		0E2B0BAA1891AA6000FE1759 /* TWAPaginationOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2B0BA91891AA6000FE1759 /* TWAPaginationOptions.m */; };
+		0E2B0BAA1891AA6000FE1759 /* TWARequestOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2B0BA91891AA6000FE1759 /* TWARequestOptions.m */; };
 		0E578654188D8FC500CD846E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E578653188D8FC500CD846E /* Foundation.framework */; };
 		0E578662188D8FC500CD846E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E578661188D8FC500CD846E /* XCTest.framework */; };
 		0E578663188D8FC500CD846E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E578653188D8FC500CD846E /* Foundation.framework */; };
@@ -66,8 +66,8 @@
 
 /* Begin PBXFileReference section */
 		0D3479F438464A6CA966470C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		0E2B0BA81891AA6000FE1759 /* TWAPaginationOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWAPaginationOptions.h; sourceTree = "<group>"; };
-		0E2B0BA91891AA6000FE1759 /* TWAPaginationOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWAPaginationOptions.m; sourceTree = "<group>"; };
+		0E2B0BA81891AA6000FE1759 /* TWARequestOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWARequestOptions.h; sourceTree = "<group>"; };
+		0E2B0BA91891AA6000FE1759 /* TWARequestOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWARequestOptions.m; sourceTree = "<group>"; };
 		0E2B0BEC1891B57C00FE1759 /* WaltersAPI.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WaltersAPI.podspec; sourceTree = "<group>"; };
 		0E2B0BED1891B61B00FE1759 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		0E4F3052188D97E600D2C5A0 /* TWABase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWABase.h; sourceTree = "<group>"; };
@@ -159,8 +159,8 @@
 		0E578655188D8FC500CD846E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				0E2B0BA81891AA6000FE1759 /* TWAPaginationOptions.h */,
-				0E2B0BA91891AA6000FE1759 /* TWAPaginationOptions.m */,
+				0E2B0BA81891AA6000FE1759 /* TWARequestOptions.h */,
+				0E2B0BA91891AA6000FE1759 /* TWARequestOptions.m */,
 				0E578656188D8FC500CD846E /* Supporting Files */,
 				0E4F3052188D97E600D2C5A0 /* TWABase.h */,
 				0E4F3053188D97E600D2C5A0 /* TWABase.m */,
@@ -326,7 +326,7 @@
 			files = (
 				0E03FA91189198A200FA5693 /* TWABase.m in Sources */,
 				0E03FA93189198A200FA5693 /* TWAClient.m in Sources */,
-				0E2B0BAA1891AA6000FE1759 /* TWAPaginationOptions.m in Sources */,
+				0E2B0BAA1891AA6000FE1759 /* TWARequestOptions.m in Sources */,
 				0E03FA95189198A200FA5693 /* TWAObject.m in Sources */,
 				0E03FA97189198A200FA5693 /* TWACollection.m in Sources */,
 				0E03FA99189198A200FA5693 /* TWAExhibition.m in Sources */,

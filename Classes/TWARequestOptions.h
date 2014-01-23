@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TWAPaginationOptions : NSObject
+@interface TWARequestOptions : NSObject
 
 @property int pageSize;
 @property int page;
 
 - (id) initWithPage: (int) aPage andPageSize: (int) aPageSize;
 - (NSDictionary*) toDictionary;
-+ (TWAPaginationOptions*) defaultPaginationOptions;
++ (TWARequestOptions*) defaultPaginationOptions;
  
 @end

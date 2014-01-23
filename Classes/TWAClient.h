@@ -13,7 +13,7 @@
 #import "TWAGeography.h"
 #import "TWAImage.h"
 #import "TWALocation.h"
-#import "TWAPaginationOptions.h"
+#import "TWARequestOptions.h"
 
 @interface TWAClient : NSObject
 
@@ -22,7 +22,7 @@ extern NSString *const BaseURL;
 - (id)initWithAPIKey: (NSString *) apiKey;
 
 // Object methods
-- (void) getObjectsWithPaginationOptions: (TWAPaginationOptions*) paginationOptions success:(void(^)(NSArray*)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock;
+- (void) getObjectsWithPaginationOptions: (TWARequestOptions*) paginationOptions success:(void(^)(NSArray*)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock;
 - (void) getObjectByID: (NSString *) objectID onSuccess:(void(^)(TWAObject*)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock;
 
 - (NSArray *) getCollections;
