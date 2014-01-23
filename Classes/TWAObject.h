@@ -8,12 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "TWABase.h"
-//#import <AFNetworking/AFHTTPRequestOperationManager.h>
 
 @interface TWAObject : TWABase
 
 - (id) initWithDictionary: (NSDictionary*) attributeDict;
-- (void) fetchPage: (int) pageNumber withPageSize: (int) pageSize completion: (void(^)(NSArray*)) callback;
+- (void) getAllUsingPaginationOptions: (TWAPaginationOptions*) paginationOptions onSuccess: (void(^)(NSArray* items)) successBlock fail: (void(^)(NSURLResponse* response, NSError* error)) failureBlock;
 
 @property NSString* classification;
 

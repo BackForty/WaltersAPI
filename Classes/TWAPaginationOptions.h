@@ -14,6 +14,7 @@
 @property int page;
 
 - (id) initWithPage: (int) aPage andPageSize: (int) aPageSize;
+- (NSDictionary*) toDictionary;
 + (TWAPaginationOptions*) defaultPaginationOptions;
  
 @end

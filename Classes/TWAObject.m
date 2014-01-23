@@ -18,31 +18,28 @@
     return self;
 }
 
-- (void) fetchPage: (int) pageNumber withPageSize: (int) pageSize completion: (void(^)(NSArray*)) callback {
-
-    NSString *indexURL = @"http://api.thewalters.org/v1/objects?apikey=sOK3xgGkv3ooeK4J9P5yKINSs8vSgWEMSeLp6TLUkT6iX7B5hraqLDEZ1sBpln3O";
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL: [NSURL URLWithString: indexURL]];
-    NSOperationQueue *defaultQueue = [NSOperationQueue mainQueue];
+- (void) getAllUsingPaginationOptions: (TWAPaginationOptions*) paginationOptions onSuccess: (void(^)(NSArray* items)) successBlock fail: (void(^)(NSURLResponse* response, NSError* error)) failureBlock {
+    NSURLRequest *request = [self requestForPath: @"/objects" withPaginationOptions: paginationOptions];
     
     [NSURLConnection sendAsynchronousRequest: request
-                                       queue: defaultQueue
+                                       queue: [self operationQueue]
                            completionHandler: ^(NSURLResponse *response, NSData *data, NSError *connectionError) {
                                if(connectionError) {
-                                   // Call callback with connection error
+                                   failureBlock(response, connectionError);
                                } else {
                                    NSError *parsingError;
                                    NSDictionary *responseData = [NSJSONSerialization JSONObjectWithData: data
                                                                                                 options: kNilOptions
                                                                                                   error: &parsingError];
                                    if(parsingError) {
-                                       // Call callback with parsing error
+                                       failureBlock(response, parsingError);
                                    } else {
                                        NSArray *rawObjects = [responseData objectForKey: @"Items"];
                                        NSMutableArray *objects = [[NSMutableArray alloc] init];
                                        for(id thing in rawObjects) {
                                            [objects addObject: [[TWAObject alloc] initWithDictionary: thing]];
                                        }
-                                       callback(objects);
+                                       successBlock(objects);
                                    }
                                }
                            }];

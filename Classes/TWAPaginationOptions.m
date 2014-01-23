@@ -23,4 +23,10 @@
     return self;
 }
 
+- (NSDictionary*) toDictionary {
+    NSNumber *currentPage = [NSNumber numberWithInt: self.page];
+    NSNumber *currentPageSize = [NSNumber numberWithInt: self.pageSize];
+    return [[NSDictionary alloc] initWithObjects: [[NSArray alloc] initWithObjects: @"Page", @"pageSize", nil]  forKeys: [[NSArray alloc] initWithObjects: currentPage, currentPageSize, nil]];
+}
+
 @end

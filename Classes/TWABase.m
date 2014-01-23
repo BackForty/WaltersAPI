@@ -23,14 +23,35 @@
     }
 }
 
-+ (void) fetchJSONDataAtURL: (NSURL *) dataURL returningResultsTo: (void(^)(NSURLResponse*, id, NSError*)) callback {
+- (NSOperationQueue*) operationQueue {
+    return [NSOperationQueue mainQueue];
+}
+
+- (NSURLRequest*) requestForPath: (NSString*) resourcePath withPaginationOptions: (TWAPaginationOptions*) paginationOptions {
+    NSURL *baseURL = [[NSURL alloc] initWithString: @"http://api.thewalters.org/v1"];
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] initWithDictionary: [paginationOptions toDictionary]];
+    [parameters setObject: apiKey forKey: @"apiKey"];
     
-//    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-//    AFURLSessionManager *sessionManager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-//
-//    NSURLRequest *request = [NSURLRequest requestWithURL: dataURL];
-//    NSURLSessionDataTask *dataTask = [sessionManager dataTaskWithRequest:request completionHandler:callback];
-//    [dataTask resume];
+    NSString *pathWithParams = [self resourcePath: resourcePath withParameters: parameters];
+    NSURL *requestURL = [[NSURL alloc] initWithString: pathWithParams relativeToURL: baseURL];
+    
+    return [[NSURLRequest alloc] initWithURL: requestURL];
+}
+
+- (NSString*) resourcePath: (NSString*) resourcePath withParameters: (NSDictionary*) parameters {
+    NSMutableString *returnString = [[NSMutableString alloc] initWithString: resourcePath];
+    
+    if([parameters count] > 0) {
+        [returnString appendString: @"?"];
+        for(id key in parameters) {
+            [returnString appendString: key];
+            [returnString appendString: @"="];
+            [returnString appendString: [parameters objectForKey: key]];
+            [returnString appendString: @"&"];
+        }
+    }
+    
+    return returnString;
 }
 
 @end

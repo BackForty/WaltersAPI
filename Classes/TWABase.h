@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-//#import <AFNetworking/AFURLSessionManager.h>
+#import "TWAPaginationOptions.h"
 
 @interface TWABase : NSObject
 
 - (id)initWithAPIKey: (NSString *) someAPIKey;
-+ (void) fetchJSONDataAtURL: (NSURL *) dataURL returningResultsTo: (void(^)(NSURLResponse*, id, NSError*)) callback;
+- (NSOperationQueue*) operationQueue;
+- (NSURLRequest*) requestForPath: (NSString*) resourcePath withPaginationOptions: (TWAPaginationOptions*) paginationOptions;
+- (NSString*) resourcePath: (NSString*) resourcePath withParameters: (NSDictionary*) parameters;
 
 @end
