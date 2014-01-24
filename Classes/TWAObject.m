@@ -14,6 +14,21 @@
     return @"/objects";
 }
 
+- (void)setValue:(id)value forKey:(NSString *)key {
+    if([key isEqualToString:@"collection"]) {
+        if([NSStringFromClass([value class]) isEqualToString:@"__NSCFString"]) {
+            self.collectionName = (NSString *)value;
+        } else {
+            self.collectionName = [value objectForKey:@"Name"];
+            self.collectionID = [value objectForKey:@"CollectionID"];
+        }
+    }
+    else if([key isEqualToString:@"museumLocation"]) {
+        self.museumLocationName = [value objectForKey:@"DisplayCurrentLocation"];
+        self.museumLocationID = [value objectForKey:@"LocationID"];
+    }
+}
+
 + (NSString *)itemPathWithID: (NSString*) itemID {
     NSMutableString *path = [[NSMutableString alloc] initWithString: @"/objects/"];
     [path appendString: itemID];

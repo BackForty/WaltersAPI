@@ -13,7 +13,6 @@
 
 @property (nonatomic, strong) NSString *description;
 @property (nonatomic, strong) NSString *primaryImage;
-@property (nonatomic, assign) double collectionID;
 @property (nonatomic, assign) double dateBeginYear;
 @property (nonatomic, assign) double dateEndYear;
 @property (nonatomic, assign) double objectID;
@@ -31,23 +30,27 @@
 @property (nonatomic, strong) NSString *objectName;
 @property (nonatomic, strong) NSString *objectNumber;
 @property (nonatomic, strong) NSString *provenance;
+@property (nonatomic, strong) NSString *period;
+@property (nonatomic, strong) NSString *reign;
 @property (nonatomic, strong) NSString *publicAccessDate;
 @property (nonatomic, strong) NSString *resourceURL;
 @property (nonatomic, strong) NSString *sortNumber;
 @property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSString *collection; // TODO CHECK TYPE
-@property (nonatomic, strong) NSString *creators; // TODO CHECK TYPE
-@property (nonatomic, strong) NSString *culture; // TODO CHECK TYPE
-@property (nonatomic, strong) NSString *exhibitions; // TODO CHECK TYPE
-@property (nonatomic, strong) NSString *geographies; // TODO CHECK TYPE
-@property (nonatomic, strong) NSString *images; // TODO CHECK TYPE
+@property (nonatomic, strong) NSString *culture;
+
+@property (nonatomic, assign) NSString *collectionID;
+@property (nonatomic, strong) NSString *collectionName;
+
+@property (nonatomic, strong) NSString *museumLocationID;
+@property (nonatomic, strong) NSString *museumLocationName;
+
+@property (nonatomic, strong) NSArray *creators;
+@property (nonatomic, strong) NSArray *exhibitions;
+@property (nonatomic, strong) NSArray *geographies;
+@property (nonatomic, strong) NSArray *images;
+
 @property (nonatomic, strong) NSString *inscriptions; // TODO CHECK TYPE
-@property (nonatomic, strong) NSString *museumLocation; // TODO CHECK TYPE
-@property (nonatomic, strong) NSString *period; // TODO CHECK TYPE
-@property (nonatomic, strong) NSString *reign; // TODO CHECK TYPE
 @property (nonatomic, strong) NSString *relatedObjects; // TODO CHECK TYPE
 @property (nonatomic, strong) NSString *style; // TODO CHECK TYPE
-
-
 
 @end

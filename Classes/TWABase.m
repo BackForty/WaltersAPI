@@ -23,7 +23,7 @@
 }
 
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key {
-    NSLog(@"ignoring undefined key:value => %@: %@", key, value);
+    NSLog(@"%@ setValue: ignoring undefined key/value => %@: %@", [self class], key, value);
 }
 
 + (NSURLRequest*) requestForPath: (NSString*) resourcePath withRequestOptions: (TWARequestOptions*) requestOptions {
