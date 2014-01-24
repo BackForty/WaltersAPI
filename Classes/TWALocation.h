@@ -11,4 +11,11 @@
 
 @interface TWALocation : TWABase
 
+@property (nonatomic, assign) BOOL publicAccess;
+@property (nonatomic, assign) double locationID;
+@property (nonatomic, strong) NSString *displayCurrentLocation;
+@property (nonatomic, strong) NSString *room; // TODO CHECK TYPE
+@property (nonatomic, strong) NSString *site; // TODO CHECK TYPE
+@property (nonatomic, strong) NSString *unitType; // TODO CHECK TYPE
+
 @end

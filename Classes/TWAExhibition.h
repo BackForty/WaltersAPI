@@ -11,4 +11,15 @@
 
 @interface TWAExhibition : TWABase
 
+@property (nonatomic, assign) BOOL nonWAMExhibition;
+@property (nonatomic, assign) double exhibBeginYear;
+@property (nonatomic, assign) double exhibEndYear;
+@property (nonatomic, assign) double exhibitionID;
+@property (nonatomic, strong) NSString *exhTitle;
+@property (nonatomic, strong) NSString *exhibBeginDate;
+@property (nonatomic, strong) NSString *exhibDisplayDate;
+@property (nonatomic, strong) NSString *exhibEndDate;
+@property (nonatomic, strong) NSString *locationID; // TODO CHECK TYPE
+@property (nonatomic, strong) NSString *textblock;
+
 @end

@@ -11,4 +11,9 @@
 
 @interface TWACollection : TWABase
 
+@property (nonatomic, assign) double collectionID;
+@property (nonatomic, assign) double numObjects;
+@property (nonatomic, strong) NSString *collDescription;
+@property (nonatomic, strong) NSString *collectionName;
+
 @end
