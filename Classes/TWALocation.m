@@ -10,4 +10,14 @@
 
 @implementation TWALocation
 
++ (NSString *)collectionPath {
+    return @"/museum/locations";
+}
+
++ (NSString *)itemPathWithID: (NSString*) itemID {
+    NSMutableString *path = [[NSMutableString alloc] initWithString: @"/museum/locations/"];
+    [path appendString: itemID];
+    return path;
+}
+
 @end
