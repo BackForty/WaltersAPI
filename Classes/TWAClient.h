@@ -21,23 +21,24 @@ extern NSString *const BaseURL;
 
 - (id)initWithAPIKey: (NSString *) apiKey;
 
-// Object methods
+// Objects
 - (void) getObjectsWithRequestOptions: (TWARequestOptions*) requestOptions success:(void(^)(NSArray*)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock;
 - (void) getObjectByID: (NSString *) objectID onSuccess:(void(^)(id)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock;
 
-- (NSArray *) getCollections;
-- (TWACollection *) getCollectionByID: (NSString *) objectID;
+// Collections
+- (void) getCollectionsWithRequestOptions: (TWARequestOptions*) requestOptions success:(void(^)(NSArray*)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock;
+- (void) getCollectionByID: (NSString *) objectID onSuccess:(void(^)(id)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock;
 
-- (NSArray *) getExhibitions;
-- (TWAExhibition *) getExhibitionByID: (NSString *) objectID;
+// Exhibitions
+- (void) getExhibitionsWithRequestOptions: (TWARequestOptions*) requestOptions success:(void(^)(NSArray*)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock;
+- (void) getExhibitionByID: (NSString *) objectID onSuccess:(void(^)(id)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock;
 
-- (NSArray *) getGeographies;
-- (TWAGeography *) getGeographyByID: (NSString *) objectID;
+// Geographies
+- (void) getGeographiesWithRequestOptions: (TWARequestOptions*) requestOptions success:(void(^)(NSArray*)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock;
+- (void) getGeographyByID: (NSString *) objectID onSuccess:(void(^)(id)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock;
 
-- (NSArray *) getImages;
-- (TWAImage *) getImnageByID: (NSString *) objectID;
-
-- (NSArray *) getLocations;
-- (TWALocation *) getLocationByID: (NSString *) objectID;
+// Locations
+- (void) getLocationsWithRequestOptions: (TWARequestOptions*) requestOptions success:(void(^)(NSArray*)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock;
+- (void) getLocationByID: (NSString *) objectID onSuccess:(void(^)(id)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock;
 
 @end

@@ -40,44 +40,56 @@ NSString *const BaseURL = @"http://api.thewalters.org";
     [TWAObject getByID: objectID withRequestOptions: requestOptions onSuccess: successBlock fail: failureBlock];
 }
 
-- (NSArray *) getCollections {
-    return nil;
+- (void) getCollectionsWithRequestOptions: (TWARequestOptions*) requestOptions success:(void(^)(NSArray*)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock {
+    
+    [requestOptions setOption: @"apikey" withValue: apiKey];
+    [TWACollection getAllUsingOptions: requestOptions onSuccess: successBlock fail: failureBlock];
 }
 
-- (TWACollection *) getCollectionByID: (NSString *) objectID {
-    return nil;
+- (void) getCollectionByID: (NSString *) objectID onSuccess:(void(^)(id)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock {
+    
+    TWARequestOptions *requestOptions = [[TWARequestOptions alloc] init];
+    [requestOptions setOption: @"apikey" withValue: apiKey];
+    [TWACollection getByID: objectID withRequestOptions: requestOptions onSuccess: successBlock fail: failureBlock];
 }
 
-- (NSArray *) getExhibitions {
-    return nil;
+- (void) getExhibitionsWithRequestOptions: (TWARequestOptions*) requestOptions success:(void(^)(NSArray*)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock {
+    
+    [requestOptions setOption: @"apikey" withValue: apiKey];
+    [TWAExhibition getAllUsingOptions: requestOptions onSuccess: successBlock fail: failureBlock];
 }
 
-- (TWAExhibition *) getExhibitionByID: (NSString *) objectID {
-    return nil;
+- (void) getExhibitionByID: (NSString *) objectID onSuccess:(void(^)(id)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock {
+    
+    TWARequestOptions *requestOptions = [[TWARequestOptions alloc] init];
+    [requestOptions setOption: @"apikey" withValue: apiKey];
+    [TWAExhibition getByID: objectID withRequestOptions: requestOptions onSuccess: successBlock fail: failureBlock];
 }
 
-- (NSArray *) getGeographies {
-    return nil;
+- (void) getGeographiesWithRequestOptions: (TWARequestOptions*) requestOptions success:(void(^)(NSArray*)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock {
+    
+    [requestOptions setOption: @"apikey" withValue: apiKey];
+    [TWAGeography getAllUsingOptions: requestOptions onSuccess: successBlock fail: failureBlock];
 }
 
-- (TWAGeography *) getGeographyByID: (NSString *) objectID {
-    return nil;
+- (void) getGeographyByID: (NSString *) objectID onSuccess:(void(^)(id)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock {
+    
+    TWARequestOptions *requestOptions = [[TWARequestOptions alloc] init];
+    [requestOptions setOption: @"apikey" withValue: apiKey];
+    [TWAGeography getByID: objectID withRequestOptions: requestOptions onSuccess: successBlock fail: failureBlock];
 }
 
-- (NSArray *) getImages {
-    return nil;
+- (void) getLocationsWithRequestOptions: (TWARequestOptions*) requestOptions success:(void(^)(NSArray*)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock {
+    
+    [requestOptions setOption: @"apikey" withValue: apiKey];
+    [TWALocation getAllUsingOptions: requestOptions onSuccess: successBlock fail: failureBlock];
 }
 
-- (TWAImage *) getImnageByID: (NSString *) objectID {
-    return nil;
-}
-
-- (NSArray *) getLocations {
-    return nil;
-}
-
-- (TWALocation *) getLocationByID: (NSString *) objectID {
-    return nil;
+- (void) getLocationByID: (NSString *) objectID onSuccess:(void(^)(id)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock {
+    
+    TWARequestOptions *requestOptions = [[TWARequestOptions alloc] init];
+    [requestOptions setOption: @"apikey" withValue: apiKey];
+    [TWALocation getByID: objectID withRequestOptions: requestOptions onSuccess: successBlock fail: failureBlock];
 }
 
 @end
