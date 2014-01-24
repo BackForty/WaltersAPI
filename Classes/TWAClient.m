@@ -40,10 +40,6 @@ NSString *const BaseURL = @"http://api.thewalters.org";
     [TWAObject getByID: objectID withRequestOptions: requestOptions onSuccess: successBlock fail: failureBlock];
 }
 
-- (void) getObjectByID: (NSString *) objectID completion:(void(^)(TWAImage*))callback {
-
-}
-
 - (NSArray *) getCollections {
     return nil;
 }
