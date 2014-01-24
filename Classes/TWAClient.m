@@ -29,8 +29,8 @@ NSString *const BaseURL = @"http://api.thewalters.org";
 
 - (void) getObjectsWithRequestOptions: (TWARequestOptions*) requestOptions success:(void(^)(NSArray*)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock {
     
-    TWAObject *twaObject = [[TWAObject alloc] initWithAPIKey: apiKey];
-    [twaObject getAllUsingOptions: requestOptions onSuccess: successBlock fail: failureBlock];
+    [requestOptions setOptionWithKey: @"apikey" andValue: apiKey];
+    [TWAObject getAllUsingOptions: requestOptions onSuccess: successBlock fail: failureBlock];
 }
 
 - (void) getObjectByID: (NSString *) objectID onSuccess:(void(^)(TWAObject*)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock {

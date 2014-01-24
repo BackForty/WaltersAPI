@@ -29,9 +29,7 @@
 }
 
 - (NSDictionary*) toDictionary {
-    NSArray *keys = [[NSArray alloc] initWithObjects: @"Page", @"pageSize", nil];
-    NSArray *values = [[NSArray alloc] initWithObjects: [@(self.page) description], [@(self.pageSize) description], nil];
-    return [[NSDictionary alloc] initWithObjects: values forKeys: keys];
+    return options;
 }
 
 - (NSArray*) validKeys {

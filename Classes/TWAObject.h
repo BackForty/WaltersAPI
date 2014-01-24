@@ -10,9 +10,6 @@
 #import "TWABase.h"
 
 @interface TWAObject : TWABase
-
-- (id) initWithDictionary: (NSDictionary*) attributeDict;
-
 @property NSString* classification;
 
 @end

@@ -15,6 +15,7 @@
 
 - (id) initWithDictionary: (NSDictionary*) aDict;
 - (NSDictionary*) toDictionary;
+- (BOOL) setOptionWithKey: (NSString*) key andValue: (NSString*) value;
 
 + (TWARequestOptions*) defaultOptions;
  
