@@ -37,11 +37,6 @@ NSString *const BaseURL = @"http://api.thewalters.org";
     
 }
 
-- (void) getObjectsOnPage: (int) pageNumber withPageSize: (int) pageSize completion:(void(^)(NSArray*))callback {
-
-
-}
-
 - (void) getObjectByID: (NSString *) objectID completion:(void(^)(TWAImage*))callback {
 
 }
