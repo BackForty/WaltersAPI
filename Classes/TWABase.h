@@ -11,6 +11,7 @@
 
 @interface TWABase : NSObject
 
+- (id) initWithDictionary: (NSDictionary*) attributeDict;
 + (NSURLRequest*) requestForPath: (NSString*) resourcePath withRequestOptions: (TWARequestOptions*) requestOptions;
 + (NSString*) resourcePath: (NSString*) resourcePath withParameters: (NSDictionary*) parameters;
 + (void) fetchDataWithRequest: (NSURLRequest *) request onSuccess: (void(^)(NSDictionary* responseData)) successBlock fail: (void(^)(NSURLResponse* response, NSError* error)) failureBlock;
@@ -22,7 +23,6 @@
 
 // Should be implemented by subclass
 + (NSArray*) buildItemListFromJSON: (NSArray*) rawObjects;
-- (id) initWithDictionary: (NSDictionary*) attributeDictionary;
 + (NSString*) collectionPath;
 + (NSString *)itemPathWithID: (NSString*) itemID;
 

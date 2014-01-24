@@ -10,14 +10,6 @@
 
 @implementation TWAObject
 
-- (id) initWithDictionary: (NSDictionary*) attributeDict {
-    self = [super init];
-    if(self) {
-        self.classification = [attributeDict objectForKey: @"Classification"];
-    }
-    return self;
-}
-
 + (NSString *)collectionPath {
     return @"/objects";
 }

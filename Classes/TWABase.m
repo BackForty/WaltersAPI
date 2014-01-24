@@ -10,6 +10,22 @@
 
 @implementation TWABase
 
+- (id)initWithDictionary: (NSDictionary*) attributeDict {
+    self = [super init];
+    if(self) {
+        for(NSString *key in [attributeDict keyEnumerator]) {
+            NSString *cased = [NSString stringWithFormat:@"%@%@", [[key substringToIndex:1] lowercaseString],
+                               [key substringFromIndex:1]];
+            [self setValue:attributeDict[key] forKey:cased];
+        }
+    }
+    return self;
+}
+
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key {
+    NSLog(@"ignoring undefined key:value => %@: %@", key, value);
+}
+
 + (NSURLRequest*) requestForPath: (NSString*) resourcePath withRequestOptions: (TWARequestOptions*) requestOptions {
     NSURL *baseURL = [[NSURL alloc] initWithString: @"http://api.thewalters.org"];
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] initWithDictionary: [requestOptions toDictionary]];
@@ -102,11 +118,6 @@
 
 + (NSString *)itemPathWithID: (NSString*) itemID {
     NSLog(@"itemPath: should be implemented by %@", self.class);
-    return nil;
-}
-
-- (id) initWithDictionary: (NSDictionary*) attributeDictionary {
-    NSLog(@"initWithDictionary: should be implemented by %@", self.class);
     return nil;
 }
 
