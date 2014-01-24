@@ -11,4 +11,13 @@
 
 @interface TWAImage : TWABase
 
+@property (nonatomic, assign) BOOL isPrimary;
+@property (nonatomic, assign) double mediaXrefID;
+@property (nonatomic, assign) double objectID;
+@property (nonatomic, assign) double rank;
+@property (nonatomic, strong) NSString *filename;
+@property (nonatomic, strong) NSString *imageURL;
+@property (nonatomic, strong) NSString *mediaType;
+@property (nonatomic, strong) NSString *mediaView;
+
 @end
