@@ -10,4 +10,13 @@
 
 @implementation TWAGeography
 
++ (NSString *)collectionPath {
+    return @"/geographies";
+}
+
++ (NSString *)itemPathWithID: (NSString*) itemID {
+    NSMutableString *path = [[NSMutableString alloc] initWithString: @"/geographies/"];
+    [path appendString: itemID];
+    return path;
+}
 @end

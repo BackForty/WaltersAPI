@@ -10,4 +10,14 @@
 
 @implementation TWACollection
 
++ (NSString *)collectionPath {
+    return @"/collections";
+}
+
++ (NSString *)itemPathWithID: (NSString*) itemID {
+    NSMutableString *path = [[NSMutableString alloc] initWithString: @"/collections/"];
+    [path appendString: itemID];
+    return path;
+}
+
 @end
