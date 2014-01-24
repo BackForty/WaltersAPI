@@ -32,13 +32,12 @@
     return validKeyList;
 }
 
-- (BOOL) setOptionWithKey: (NSString*) key andValue: (NSString*) value {
+- (void) setOption: (NSString*) key withValue: (NSString*) value {
     if([[self validKeys] containsObject: key]) {
         if(!options) {options = [[NSMutableDictionary alloc] init];}
         [options setObject: value forKey: key];
-        return TRUE;
     } else {
-        return FALSE;
+        [NSException raise: @"Invalid option key" format: @"%@ is not a valid option key", key];
     }
 }
 
