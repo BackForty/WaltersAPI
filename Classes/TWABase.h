@@ -15,13 +15,15 @@
 + (NSString*) resourcePath: (NSString*) resourcePath withParameters: (NSDictionary*) parameters;
 + (void) fetchDataWithRequest: (NSURLRequest *) request onSuccess: (void(^)(NSDictionary* responseData)) successBlock fail: (void(^)(NSURLResponse* response, NSError* error)) failureBlock;
 + (void) fetchItemsWithRequest: (NSURLRequest *) request onSuccess: (void(^)(NSArray* items)) successBlock fail: (void(^)(NSURLResponse* response, NSError* error)) failureBlock;
-+ (void) fetchItemWithRequest: (NSURLRequest *) request onSuccess: (void(^)(NSArray* items)) successBlock fail: (void(^)(NSURLResponse* response, NSError* error)) failureBlock;
++ (void) fetchItemWithRequest: (NSURLRequest *) request onSuccess: (void(^)(id item)) successBlock fail: (void(^)(NSURLResponse* response, NSError* error)) failureBlock;
 
 + (void) getAllUsingOptions: (TWARequestOptions*) requestOptions onSuccess: (void(^)(NSArray* items)) successBlock fail: (void(^)(NSURLResponse* response, NSError* error)) failureBlock;
++ (void) getByID: (NSString*) objectID withRequestOptions: (TWARequestOptions*) requestOptions onSuccess: (void(^)(id item)) successBlock fail: (void(^)(NSURLResponse* response, NSError* error)) failureBlock;
 
 // Should be implemented by subclass
 + (NSArray*) buildItemListFromJSON: (NSArray*) rawObjects;
 - (id) initWithDictionary: (NSDictionary*) attributeDictionary;
 + (NSString*) collectionPath;
++ (NSString *)itemPathWithID: (NSString*) itemID;
 
 @end

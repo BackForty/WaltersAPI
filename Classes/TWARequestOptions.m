@@ -13,13 +13,6 @@
     NSMutableDictionary *options;
 }
 
-+ (TWARequestOptions*) defaultOptions {
-    NSArray *keys = [[NSArray alloc] initWithObjects: @"page", @"pageSize", nil];
-    NSArray *values = [[NSArray alloc] initWithObjects: @"1", @"25", nil];
-    NSDictionary *defaults = [[NSDictionary alloc] initWithObjects: values forKeys: keys];
-    return [[TWARequestOptions alloc] initWithDictionary: defaults];
-}
-
 - (id) initWithDictionary: (NSDictionary*) aDict {
     self = [super init];
     if(self) {

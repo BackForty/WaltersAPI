@@ -17,6 +17,4 @@
 - (NSDictionary*) toDictionary;
 - (BOOL) setOptionWithKey: (NSString*) key andValue: (NSString*) value;
 
-+ (TWARequestOptions*) defaultOptions;
- 
 @end

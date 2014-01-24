@@ -33,8 +33,11 @@ NSString *const BaseURL = @"http://api.thewalters.org";
     [TWAObject getAllUsingOptions: requestOptions onSuccess: successBlock fail: failureBlock];
 }
 
-- (void) getObjectByID: (NSString *) objectID onSuccess:(void(^)(TWAObject*)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock {
+- (void) getObjectByID: (NSString *) objectID onSuccess:(void(^)(id)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock {
     
+    TWARequestOptions *requestOptions = [[TWARequestOptions alloc] init];
+    [requestOptions setOptionWithKey: @"apikey" andValue: apiKey];
+    [TWAObject getByID: objectID withRequestOptions: requestOptions onSuccess: successBlock fail: failureBlock];
 }
 
 - (void) getObjectByID: (NSString *) objectID completion:(void(^)(TWAImage*))callback {

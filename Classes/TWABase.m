@@ -67,7 +67,7 @@
                           fail: failureBlock];
 }
 
-+ (void) fetchItemWithRequest: (NSURLRequest *) request onSuccess: (void(^)(NSArray* items)) successBlock fail: (void(^)(NSURLResponse* response, NSError* error)) failureBlock {
++ (void) fetchItemWithRequest: (NSURLRequest *) request onSuccess: (void(^)(id item)) successBlock fail: (void(^)(NSURLResponse* response, NSError* error)) failureBlock {
     [self fetchDataWithRequest: request
                      onSuccess: ^(NSDictionary* responseData) {
                          NSDictionary *objectAttributes = [responseData objectForKey: @"Data"];
@@ -81,6 +81,11 @@
     [self fetchItemsWithRequest: request onSuccess: successBlock fail: failureBlock];
 }
 
++ (void) getByID: (NSString*) objectID withRequestOptions: (TWARequestOptions*) requestOptions onSuccess: (void(^)(id item)) successBlock fail: (void(^)(NSURLResponse* response, NSError* error)) failureBlock {
+    NSURLRequest *request = [self requestForPath: [self itemPathWithID: objectID] withRequestOptions: requestOptions];
+    [self fetchItemWithRequest: request onSuccess: successBlock fail: failureBlock];
+}
+
 + (NSArray*) buildItemListFromJSON: (NSArray*) rawObjects {
     NSLog(@"buildItemListFromJSON: should be implemented by %@", self.class);
     return nil;
@@ -88,6 +93,11 @@
 
 + (NSString *)collectionPath {
     NSLog(@"collectionPath: should be implemented by %@", self.class);
+    return nil;
+}
+
++ (NSString *)itemPathWithID: (NSString*) itemID {
+    NSLog(@"itemPath: should be implemented by %@", self.class);
     return nil;
 }
 

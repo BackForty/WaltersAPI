@@ -22,6 +22,12 @@
     return @"/objects";
 }
 
++ (NSString *)itemPathWithID: (NSString*) itemID {
+    NSMutableString *path = [[NSMutableString alloc] initWithString: @"/objects/"];
+    [path appendString: itemID];
+    return path;
+}
+
 + (NSArray*) buildItemListFromJSON: (NSArray*) rawObjects {
     NSMutableArray *objects = [[NSMutableArray alloc] init];
     for(id thing in rawObjects) {

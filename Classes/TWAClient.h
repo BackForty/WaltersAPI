@@ -23,7 +23,7 @@ extern NSString *const BaseURL;
 
 // Object methods
 - (void) getObjectsWithRequestOptions: (TWARequestOptions*) requestOptions success:(void(^)(NSArray*)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock;
-- (void) getObjectByID: (NSString *) objectID onSuccess:(void(^)(TWAObject*)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock;
+- (void) getObjectByID: (NSString *) objectID onSuccess:(void(^)(id)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock;
 
 - (NSArray *) getCollections;
 - (TWACollection *) getCollectionByID: (NSString *) objectID;
