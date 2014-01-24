@@ -86,9 +86,13 @@
     [self fetchItemWithRequest: request onSuccess: successBlock fail: failureBlock];
 }
 
+
 + (NSArray*) buildItemListFromJSON: (NSArray*) rawObjects {
-    NSLog(@"buildItemListFromJSON: should be implemented by %@", self.class);
-    return nil;
+    NSMutableArray *objects = [[NSMutableArray alloc] init];
+    for(id thing in rawObjects) {
+        [objects addObject: [[self alloc] initWithDictionary: thing]];
+    }
+    return objects;
 }
 
 + (NSString *)collectionPath {

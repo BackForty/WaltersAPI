@@ -28,12 +28,4 @@
     return path;
 }
 
-+ (NSArray*) buildItemListFromJSON: (NSArray*) rawObjects {
-    NSMutableArray *objects = [[NSMutableArray alloc] init];
-    for(id thing in rawObjects) {
-        [objects addObject: [[TWAObject alloc] initWithDictionary: thing]];
-    }
-    return objects;
-}
-
 @end
