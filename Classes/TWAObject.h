@@ -12,7 +12,7 @@
 @interface TWAObject : TWABase
 
 @property (nonatomic, strong) NSString *description;
-@property (nonatomic, strong) NSString *primaryImage;
+@property (nonatomic, strong) NSDictionary *primaryImage;
 @property (nonatomic, assign) double dateBeginYear;
 @property (nonatomic, assign) double dateEndYear;
 @property (nonatomic, assign) double objectID;
@@ -52,5 +52,9 @@
 @property (nonatomic, strong) NSString *inscriptions; // TODO CHECK TYPE
 @property (nonatomic, strong) NSString *relatedObjects; // TODO CHECK TYPE
 @property (nonatomic, strong) NSString *style; // TODO CHECK TYPE
+
+
+
+- (void) primaryImageOnSuccess: (void(^)(UIImage *primaryImage)) successBlock onFail: (void(^)(NSError* error)) failureBlock;
 
 @end
