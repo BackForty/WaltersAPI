@@ -16,6 +16,7 @@
 		0E03FA9D189198A200FA5693 /* TWAImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F306B188D99D200D2C5A0 /* TWAImage.m */; };
 		0E03FA9F189198A200FA5693 /* TWALocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F306F188D99DE00D2C5A0 /* TWALocation.m */; };
 		0E2883FF18943B340038A8F4 /* TWAObjectRequestOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2883FE18943B340038A8F4 /* TWAObjectRequestOptions.m */; };
+		0E288401189485150038A8F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E288400189485150038A8F4 /* UIKit.framework */; };
 		0E2B0BAA1891AA6000FE1759 /* TWARequestOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2B0BA91891AA6000FE1759 /* TWARequestOptions.m */; };
 		0E578654188D8FC500CD846E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E578653188D8FC500CD846E /* Foundation.framework */; };
 		0E578662188D8FC500CD846E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E578661188D8FC500CD846E /* XCTest.framework */; };
@@ -69,6 +70,7 @@
 		0D3479F438464A6CA966470C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E2883FD18943B340038A8F4 /* TWAObjectRequestOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWAObjectRequestOptions.h; sourceTree = "<group>"; };
 		0E2883FE18943B340038A8F4 /* TWAObjectRequestOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWAObjectRequestOptions.m; sourceTree = "<group>"; };
+		0E288400189485150038A8F4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0E2B0BA81891AA6000FE1759 /* TWARequestOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWARequestOptions.h; sourceTree = "<group>"; };
 		0E2B0BA91891AA6000FE1759 /* TWARequestOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWARequestOptions.m; sourceTree = "<group>"; };
 		0E2B0BEC1891B57C00FE1759 /* WaltersAPI.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WaltersAPI.podspec; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E288401189485150038A8F4 /* UIKit.framework in Frameworks */,
 				0E578654188D8FC500CD846E /* Foundation.framework in Frameworks */,
 				55F67DBC581349AE836249F1 /* libPods.a in Frameworks */,
 			);
@@ -151,6 +154,7 @@
 		0E578652188D8FC500CD846E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0E288400189485150038A8F4 /* UIKit.framework */,
 				0E578653188D8FC500CD846E /* Foundation.framework */,
 				0E578661188D8FC500CD846E /* XCTest.framework */,
 				0E578664188D8FC500CD846E /* UIKit.framework */,

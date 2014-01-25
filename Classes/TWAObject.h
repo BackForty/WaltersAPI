@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "TWABase.h"
+#import <UIKit/UIImage.h>
 
 @interface TWAObject : TWABase
 
@@ -20,6 +21,7 @@
 @property (nonatomic, strong) NSString *classification;
 @property (nonatomic, strong) NSString *creator;
 @property (nonatomic, strong) NSString *creditLine;
+@property (nonatomic, strong) NSString *displayLocation;
 @property (nonatomic, strong) NSString *dateText;
 @property (nonatomic, strong) NSString *dimensions;
 @property (nonatomic, strong) NSString *dynasty;
