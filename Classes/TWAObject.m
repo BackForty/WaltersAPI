@@ -26,6 +26,8 @@
     else if([key isEqualToString:@"museumLocation"]) {
         self.museumLocationName = [value objectForKey:@"DisplayCurrentLocation"];
         self.museumLocationID = [value objectForKey:@"LocationID"];
+    } else {
+        [super setValue: value forKey: key];
     }
 }
 
