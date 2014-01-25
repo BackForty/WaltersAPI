@@ -8,10 +8,11 @@
 
 #import "TWARequestOptions.h"
 
-@implementation TWARequestOptions {
-    NSArray *validKeyList;
-    NSMutableDictionary *options;
-}
+@interface TWARequestOptions()
+    -(NSArray*) validKeys;
+@end
+
+@implementation TWARequestOptions
 
 - (id) initWithDictionary: (NSDictionary*) aDict {
     self = [super init];

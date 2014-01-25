@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TWARequestOptions : NSObject
+@interface TWARequestOptions : NSObject {
+    NSArray *validKeyList;
+    NSMutableDictionary *options;
+}
 
 @property int pageSize;
 @property int page;
@@ -16,5 +19,6 @@
 - (id) initWithDictionary: (NSDictionary*) aDict;
 - (NSDictionary*) toDictionary;
 - (void) setOption: (NSString*) key withValue: (NSString*) value;
+- (NSArray*) validKeys;
 
 @end
