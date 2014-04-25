@@ -27,69 +27,69 @@ NSString *const BaseURL = @"http://api.thewalters.org";
     }
 }
 
-- (void) getObjectsWithRequestOptions: (TWARequestOptions*) requestOptions success:(void(^)(NSArray*)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock {
-    
+- (void) fetchCollectionForClass: (NSString*) receiverClassName withRequestionOptions: (TWARequestOptions*) requestOptions success: (TWAClientCollectionSuccess) successBlock fail: (TWAClientFailure) failureBlock {
+  
     [requestOptions setOption: @"apikey" withValue: apiKey];
-    [TWAObject getAllUsingOptions: requestOptions onSuccess: successBlock fail: failureBlock];
+    Class receiver = NSClassFromString(receiverClassName);
+    [receiver getAllUsingOptions: requestOptions onSuccess: successBlock fail: failureBlock];
 }
 
-- (void) getObjectByID: (NSString *) objectID onSuccess:(void(^)(id)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock {
-    
+- (void) fetchSingleInstanceForClass: (NSString*) receiverClassName withID: (NSString*) ID success: (TWAClientObjectSuccess) successBlock fail: (TWAClientFailure) failureBlock{
+
     TWARequestOptions *requestOptions = [[TWARequestOptions alloc] init];
     [requestOptions setOption: @"apikey" withValue: apiKey];
-    [TWAObject getByID: objectID withRequestOptions: requestOptions onSuccess: successBlock fail: failureBlock];
+    Class receiver = NSClassFromString(receiverClassName);
+    [receiver getByID: ID withRequestOptions: requestOptions onSuccess: successBlock fail: failureBlock];
 }
 
-- (void) getCollectionsWithRequestOptions: (TWARequestOptions*) requestOptions success:(void(^)(NSArray*)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock {
-    
-    [requestOptions setOption: @"apikey" withValue: apiKey];
-    [TWACollection getAllUsingOptions: requestOptions onSuccess: successBlock fail: failureBlock];
+- (void) getObjectsWithRequestOptions: (TWARequestOptions*) requestOptions success:(TWAClientCollectionSuccess) successBlock fail: (TWAClientFailure) failureBlock {
+  
+    [self fetchCollectionForClass: @"TWAObject" withRequestionOptions: requestOptions success: successBlock fail: failureBlock];
 }
 
-- (void) getCollectionByID: (NSString *) objectID onSuccess:(void(^)(id)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock {
-    
-    TWARequestOptions *requestOptions = [[TWARequestOptions alloc] init];
-    [requestOptions setOption: @"apikey" withValue: apiKey];
-    [TWACollection getByID: objectID withRequestOptions: requestOptions onSuccess: successBlock fail: failureBlock];
+- (void) getObjectByID: (NSString *) objectID onSuccess:(TWAClientObjectSuccess) successBlock fail: (TWAClientFailure) failureBlock {
+  
+    [self fetchSingleInstanceForClass: @"TWAObject" withID: objectID success: successBlock fail: failureBlock];
 }
 
-- (void) getExhibitionsWithRequestOptions: (TWARequestOptions*) requestOptions success:(void(^)(NSArray*)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock {
-    
-    [requestOptions setOption: @"apikey" withValue: apiKey];
-    [TWAExhibition getAllUsingOptions: requestOptions onSuccess: successBlock fail: failureBlock];
+- (void) getCollectionsWithRequestOptions: (TWARequestOptions*) requestOptions success:(TWAClientCollectionSuccess) successBlock fail: (TWAClientFailure) failureBlock {
+  
+    [self fetchCollectionForClass: @"TWACollection" withRequestionOptions: requestOptions success: successBlock fail: failureBlock];
 }
 
-- (void) getExhibitionByID: (NSString *) objectID onSuccess:(void(^)(id)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock {
-    
-    TWARequestOptions *requestOptions = [[TWARequestOptions alloc] init];
-    [requestOptions setOption: @"apikey" withValue: apiKey];
-    [TWAExhibition getByID: objectID withRequestOptions: requestOptions onSuccess: successBlock fail: failureBlock];
+- (void) getCollectionByID: (NSString *) objectID onSuccess:(TWAClientObjectSuccess) successBlock fail: (TWAClientFailure) failureBlock {
+  
+    [self fetchSingleInstanceForClass: @"TWACollection" withID: objectID success: successBlock fail: failureBlock];
 }
 
-- (void) getGeographiesWithRequestOptions: (TWARequestOptions*) requestOptions success:(void(^)(NSArray*)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock {
-    
-    [requestOptions setOption: @"apikey" withValue: apiKey];
-    [TWAGeography getAllUsingOptions: requestOptions onSuccess: successBlock fail: failureBlock];
+- (void) getExhibitionsWithRequestOptions: (TWARequestOptions*) requestOptions success:(TWAClientCollectionSuccess) successBlock fail: (TWAClientFailure) failureBlock {
+  
+    [self fetchCollectionForClass: @"TWAExhibition" withRequestionOptions: requestOptions success: successBlock fail: failureBlock];
 }
 
-- (void) getGeographyByID: (NSString *) objectID onSuccess:(void(^)(id)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock {
-    
-    TWARequestOptions *requestOptions = [[TWARequestOptions alloc] init];
-    [requestOptions setOption: @"apikey" withValue: apiKey];
-    [TWAGeography getByID: objectID withRequestOptions: requestOptions onSuccess: successBlock fail: failureBlock];
+- (void) getExhibitionByID: (NSString *) objectID onSuccess:(TWAClientObjectSuccess) successBlock fail: (TWAClientFailure) failureBlock {
+  
+    [self fetchSingleInstanceForClass: @"TWAExhibition" withID: objectID success: successBlock fail: failureBlock];
 }
 
-- (void) getLocationsWithRequestOptions: (TWARequestOptions*) requestOptions success:(void(^)(NSArray*)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock {
-    
-    [requestOptions setOption: @"apikey" withValue: apiKey];
-    [TWALocation getAllUsingOptions: requestOptions onSuccess: successBlock fail: failureBlock];
+- (void) getGeographiesWithRequestOptions: (TWARequestOptions*) requestOptions success:(TWAClientCollectionSuccess) successBlock fail: (TWAClientFailure) failureBlock {
+  
+    [self fetchCollectionForClass: @"TWAGeography" withRequestionOptions: requestOptions success: successBlock fail: failureBlock];
 }
 
-- (void) getLocationByID: (NSString *) objectID onSuccess:(void(^)(id)) successBlock fail: (void(^)(NSURLResponse *response, NSError *error)) failureBlock {
-    
-    TWARequestOptions *requestOptions = [[TWARequestOptions alloc] init];
-    [requestOptions setOption: @"apikey" withValue: apiKey];
-    [TWALocation getByID: objectID withRequestOptions: requestOptions onSuccess: successBlock fail: failureBlock];
+- (void) getGeographyByID: (NSString *) objectID onSuccess:(TWAClientObjectSuccess) successBlock fail: (TWAClientFailure) failureBlock {
+  
+    [self fetchSingleInstanceForClass: @"TWAGeography" withID: objectID success: successBlock fail: failureBlock];
+}
+
+- (void) getLocationsWithRequestOptions: (TWARequestOptions*) requestOptions success:(TWAClientCollectionSuccess) successBlock fail: (TWAClientFailure) failureBlock {
+  
+    [self fetchCollectionForClass: @"TWALocation" withRequestionOptions: requestOptions success: successBlock fail: failureBlock];
+}
+
+- (void) getLocationByID: (NSString *) objectID onSuccess:(TWAClientObjectSuccess) successBlock fail: (TWAClientFailure) failureBlock {
+  
+    [self fetchSingleInstanceForClass: @"TWALocation" withID: objectID success: successBlock fail: failureBlock];
 }
 
 @end
