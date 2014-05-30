@@ -12,7 +12,7 @@
 - (NSArray*) validKeys {
     if(!validKeyList) {
         NSMutableArray *keyList = [[NSMutableArray alloc] initWithArray: [super validKeys]];
-        [keyList addObjectsFromArray: [[NSArray alloc] initWithObjects: @"keyword", @"name", @"creator", @"collectionID", @"yearBegin", @"yearEnd", @"classification", @"medium", @"orderBy", nil]];
+        [keyList addObjectsFromArray: [[NSArray alloc] initWithObjects: @"keyword", @"name", @"creator", @"collectionID", @"yearBegin", @"yearEnd", @"classification", @"medium", @"orderBy", @"imageType", nil]];
         validKeyList = [[NSArray alloc] initWithArray: keyList];
     }
     
