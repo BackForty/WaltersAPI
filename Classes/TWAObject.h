@@ -57,6 +57,6 @@
 
 
 
-- (void) primaryImageOnSuccess: (void(^)(UIImage *primaryImage)) successBlock onFail: (void(^)(NSError* error)) failureBlock;
+- (void) primaryImageWithOptions: (NSDictionary *) requestOptions OnSuccess: (void(^)(UIImage *primaryImage)) successBlock onFail: (void(^)(NSError* error)) failureBlock;
 
 @end

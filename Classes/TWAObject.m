@@ -37,8 +37,19 @@
     return path;
 }
 
-- (void) primaryImageOnSuccess: (void(^)(UIImage *primaryImage)) successBlock onFail: (void(^)(NSError* error)) failureBlock {
-    NSURL *baseURL = [[NSURL alloc] initWithString: [self.primaryImage objectForKey: @"Large"]];
+- (void) primaryImageWithOptions: (NSDictionary *) requestOptions OnSuccess: (void(^)(UIImage *primaryImage)) successBlock onFail: (void(^)(NSError* error)) failureBlock {
+    NSMutableString *imageURLString = [self.primaryImage objectForKey: @"Large"];
+    if([requestOptions count] > 0) {
+      [imageURLString appendString: @"?"];
+      for(id key in requestOptions) {
+        [imageURLString appendString: key];
+        [imageURLString appendString: @"="];
+        [imageURLString appendString: [requestOptions objectForKey: key]];
+        [imageURLString appendString: @"&"];
+      }
+    }
+    NSURL *baseURL = [[NSURL alloc] initWithString: imageURLString];
+  
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL: baseURL];
     [NSURLConnection sendAsynchronousRequest: request
                                        queue: [NSOperationQueue mainQueue]
