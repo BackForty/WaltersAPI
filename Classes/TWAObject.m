@@ -38,7 +38,7 @@
 }
 
 - (void) primaryImageWithOptions: (NSDictionary *) requestOptions OnSuccess: (void(^)(UIImage *primaryImage)) successBlock onFail: (void(^)(NSError* error)) failureBlock {
-    NSMutableString *imageURLString = [self.primaryImage objectForKey: @"Large"];
+    NSMutableString *imageURLString = [[NSMutableString alloc] initWithString: [self.primaryImage objectForKey: @"Large"]];
     if([requestOptions count] > 0) {
       [imageURLString appendString: @"?"];
       for(id key in requestOptions) {
