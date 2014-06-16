@@ -32,6 +32,8 @@
 		0E8B48E0188F05300084A319 /* TWAGeography.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0E4F3066188D99BA00D2C5A0 /* TWAGeography.h */; };
 		0E8B48E2188F05300084A319 /* TWAImage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0E4F306A188D99D200D2C5A0 /* TWAImage.h */; };
 		0E8B48E4188F05300084A319 /* TWALocation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0E4F306E188D99DE00D2C5A0 /* TWALocation.h */; };
+		0EBDD5CD194B581000CD2381 /* TWARequestOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBDD5CC194B581000CD2381 /* TWARequestOptions.swift */; };
+		0EBDD5CF194B6ED600CD2381 /* TWABase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBDD5CE194B6ED600CD2381 /* TWABase.swift */; };
 		0EEFB668188DCF4600A9D193 /* WaltersAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E57866F188D8FC500CD846E /* WaltersAPITests.m */; };
 		55F67DBC581349AE836249F1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3479F438464A6CA966470C /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -100,6 +102,9 @@
 		0E57866B188D8FC500CD846E /* WaltersAPITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WaltersAPITests-Info.plist"; sourceTree = "<group>"; };
 		0E57866D188D8FC500CD846E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0E57866F188D8FC500CD846E /* WaltersAPITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WaltersAPITests.m; sourceTree = "<group>"; };
+		0EBDD5CB194B580F00CD2381 /* WaltersAPI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WaltersAPI-Bridging-Header.h"; sourceTree = "<group>"; };
+		0EBDD5CC194B581000CD2381 /* TWARequestOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWARequestOptions.swift; sourceTree = "<group>"; };
+		0EBDD5CE194B6ED600CD2381 /* TWABase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWABase.swift; sourceTree = "<group>"; };
 		D536EB99AF734D98A1B710D8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,6 +192,9 @@
 				0E4F306F188D99DE00D2C5A0 /* TWALocation.m */,
 				0E2883FD18943B340038A8F4 /* TWAObjectRequestOptions.h */,
 				0E2883FE18943B340038A8F4 /* TWAObjectRequestOptions.m */,
+				0EBDD5CC194B581000CD2381 /* TWARequestOptions.swift */,
+				0EBDD5CB194B580F00CD2381 /* WaltersAPI-Bridging-Header.h */,
+				0EBDD5CE194B6ED600CD2381 /* TWABase.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -336,9 +344,11 @@
 				0E03FA91189198A200FA5693 /* TWABase.m in Sources */,
 				0E03FA93189198A200FA5693 /* TWAClient.m in Sources */,
 				0E2B0BAA1891AA6000FE1759 /* TWARequestOptions.m in Sources */,
+				0EBDD5CF194B6ED600CD2381 /* TWABase.swift in Sources */,
 				0E03FA95189198A200FA5693 /* TWAObject.m in Sources */,
 				0E2883FF18943B340038A8F4 /* TWAObjectRequestOptions.m in Sources */,
 				0E03FA97189198A200FA5693 /* TWACollection.m in Sources */,
+				0EBDD5CD194B581000CD2381 /* TWARequestOptions.swift in Sources */,
 				0E03FA99189198A200FA5693 /* TWAExhibition.m in Sources */,
 				0E03FA9B189198A200FA5693 /* TWAGeography.m in Sources */,
 				0E03FA9D189198A200FA5693 /* TWAImage.m in Sources */,
@@ -450,12 +460,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D536EB99AF734D98A1B710D8 /* Pods.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DSTROOT = /tmp/WaltersAPI.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Classes/WaltersAPI-Prefix.pch";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Classes/WaltersAPI-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -463,12 +477,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D536EB99AF734D98A1B710D8 /* Pods.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DSTROOT = /tmp/WaltersAPI.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Classes/WaltersAPI-Prefix.pch";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Classes/WaltersAPI-Bridging-Header.h";
 			};
 			name = Release;
 		};
