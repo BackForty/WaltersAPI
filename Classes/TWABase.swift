@@ -9,9 +9,11 @@
 import Foundation
 
 class TWABase : NSObject {
-  let baseURL = NSURL(string: "http://api.thewalters.org")
+  let baseURL = "http://api.thewalters.org"
+  let apiVersion = "v1"
   
   init(dictionary:Dictionary<String, String>) {
+    
     super.init()
     
     let convertedDictionary:Dictionary<String, String> = convertDictionaryKeyCase(dictionary)
@@ -21,24 +23,36 @@ class TWABase : NSObject {
     }
   }
   
-  func requestForPath(resourcePath:String, requestOptions:TWARequestOptions) -> NSURLRequest {
-    let versionedResourcePath = "/v1\(resourcePath)\(requestOptions.toParamString)"
+  func requestForPath(resourcePath: String, requestOptions: TWARequestOptions) -> NSURLRequest {
     
-    NSString *pathWithParams = [self resourcePath: versionedResourcePath withParameters: parameters];
-    NSURL *requestURL = [[NSURL alloc] initWithString: pathWithParams relativeToURL: baseURL];
-    
-    return [[NSURLRequest alloc] initWithURL: requestURL];
+    let versionedResourcePath = "\(baseURL)/\(apiVersion)/\(resourcePath)\(requestOptions.toParamString())"
+    return NSURLRequest(URL: NSURL(string: versionedResourcePath))
   }
   
-  func resourcePath(pathString:String, parameters:NSDictionary) -> String {
-    return String()
+  func fetchData(request: NSURLRequest, successBlock: (NSDictionary) -> Void, failureBlock: (NSURLResponse, NSError) -> Void) {
+
+    NSURLConnection.sendAsynchronousRequest(request,
+      queue: NSOperationQueue.mainQueue(),
+      completionHandler: {(response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+        if(error) {
+          failureBlock(response, error)
+        } else {
+          var parsingError: NSError?
+          let responseData: NSDictionary = NSJSONSerialization.JSONObjectWithData(data,
+            options: NSJSONReadingOptions.MutableContainers,
+            error: &parsingError) as NSDictionary
+          
+          if(parsingError) {
+            failureBlock(response, parsingError!)
+          } else {
+            successBlock(responseData)
+          }
+        }
+      }
+    )
   }
   
-  func fetchData(forRequest request: NSURLRequest, successBlock: (items: NSArray), failureBlock: (response:NSURLResponse, error:NSError)) {
-    
-  }
-  
-  func convertDictionaryKeyCase(dictionary:Dictionary<String, String>) -> (Dictionary<String, String>) {
+  func convertDictionaryKeyCase(dictionary : Dictionary<String, String>) -> (Dictionary<String, String>) {
     return Dictionary<String, String>()
   }
   
