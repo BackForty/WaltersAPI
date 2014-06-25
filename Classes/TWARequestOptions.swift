@@ -17,22 +17,14 @@ class TWARequestOptions {
   
   func toParamString() -> (String) {
     var paramString:NSMutableString = ""
-    
-    let firstKey:String = options[options.startIndex]
-    let lastKey:String = options[options.endIndex]
-    
+
     if(options.count > 0 ) {
       paramString.appendString("?")
       
       for(key, value) in options {
-        if(key.bridgeToObjectiveC().isEqualToString(firstKey)) { paramString.appendString("?") }
-          
         paramString.appendString("")
-          
-        if(!(key.bridgeToObjectiveC().isEqualToString(lastKey))) { paramString.appendString("&") }
+        paramString.appendString("&")
       }
-      
-      //TODO: remove the last &
     }
     
     return paramString
